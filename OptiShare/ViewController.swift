@@ -13,8 +13,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
-
+    /** Response to authorize instagram button.
+        * Follows instagram client-side (implicit) authorization
+        * rules.
+    */
+    @IBAction func authInstagram(_ sender: Any) {
+        // TODO authorize instagram externally.
+        print ("auth instagram");
+    }
+    
 }
 
