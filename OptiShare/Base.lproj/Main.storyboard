@@ -94,6 +94,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timeLabel" destination="oQ1-tp-87Q" id="nAE-p4-iHk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,11 +178,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Uh-5b-qgT">
-                                <rect key="frame" x="121" y="553" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Clear Account Data"/>
-                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQa-z2-CS9">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -189,6 +187,8 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="mRO-uX-fkf"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PIH-xd-fXM"/>
+                                    <barButtonItem title="Save" id="w1V-kP-tQP"/>
                                 </items>
                             </toolbar>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QD6-cH-VYh">
@@ -213,13 +213,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17l-2H-NHM">
-                                <rect key="frame" x="139" y="187" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Ni-hm-Uk9">
                                 <rect key="frame" x="56" y="216" width="265" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -228,6 +221,18 @@
                                     <segment title="Confidence Interval"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17l-2H-NHM">
+                                <rect key="frame" x="139" y="187" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Uh-5b-qgT">
+                                <rect key="frame" x="121" y="452" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear Account Data"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RFy-EQ-J01"/>
@@ -241,7 +246,7 @@
         <scene sceneID="Xh8-hE-FvF">
             <objects>
                 <viewController id="qBI-jl-du7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EAS-kK-aB6">
+                    <view key="view" contentMode="scaleToFill" id="EAS-kK-aB6" customClass="Accounts" customModule="OptiShare" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -253,9 +258,13 @@
                                     <segment title="LinkedIn"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJZ-eP-wQF">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJZ-eP-wQF">
                                 <rect key="frame" x="154" y="184" width="66" height="30"/>
                                 <state key="normal" title="Authorize"/>
+                                <connections>
+                                    <action selector="launchInstagramAuth:" destination="x8M-tP-yor" eventType="touchUpInside" id="gC8-L9-bTG"/>
+                                    <segue destination="8q4-xW-qIq" kind="show" id="zOE-yh-SDR"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXN-x9-BVE">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -283,7 +292,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eJZ-eP-wQF" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="168" id="68U-df-VHj"/>
+                            <constraint firstItem="eJZ-eP-wQF" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="154" id="68U-df-VHj"/>
                             <constraint firstItem="odK-ZH-nkv" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="58" id="72w-q2-Ahl"/>
                             <constraint firstItem="u6W-i7-q1s" firstAttribute="top" secondItem="Afp-Hc-QQJ" secondAttribute="top" id="B8v-D5-Jrs"/>
                             <constraint firstItem="u6W-i7-q1s" firstAttribute="trailing" secondItem="tXN-x9-BVE" secondAttribute="trailing" id="FWm-FE-1rH"/>
@@ -298,8 +307,38 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6i-Ra-TP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="x8M-tP-yor" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="853.60000000000002" y="130.88455772113943"/>
+        </scene>
+        <!--Accounts-->
+        <scene sceneID="BNF-hX-xf0">
+            <objects>
+                <viewController id="8q4-xW-qIq" customClass="Accounts" customModule="OptiShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lkw-50-g4t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pn-RH-Axp" customClass="Accounts" customModule="OptiShare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gyR-Uc-DKj"/>
+                    </view>
+                    <connections>
+                        <outlet property="wView" destination="8Pn-RH-Axp" id="dWA-xm-KDM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBJ-bx-Fgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="131.78410794602701"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
