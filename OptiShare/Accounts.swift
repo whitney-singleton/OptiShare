@@ -10,39 +10,49 @@ import Foundation
 import UIKit
 import WebKit
 
-class Accounts : UIWebView {
+class Accounts : UIViewController, WKUIDelegate {
     
     /** Instagram API const string variables */
     static let INSTAGRAM_AUTHURL = "https://api.instagram.com/oauth/authorize/";
-    static let INSTAGRAM_CLIENT_ID = "YOUR_CLIENT_ID";
+    static let INSTAGRAM_CLIENT_ID = "faf836a5070a485e90aa88bed7fe5a54";
     static let INSTAGRAM_CLIENTSERCRET = "YOUR_CLIENT_SECRET";
-    static let INSTAGRAM_REDIRECT_URI = "ENTER_REDIRECT_URI";
+    static let INSTAGRAM_REDIRECT_URI = "optishareapp.com/Instagram";
     static let INSTAGRAM_ACCESS_TOKEN = "access_token";
     static let INSTAGRAM_SCOPE = "follower_list+public_content";
     /** end instagram API strings */
     
-    @IBOutlet weak var wView: Accounts!
+    // Web view
+    var webView: WKWebView!
     
-    
-    /** On instagram auth button touch */
-    @IBAction func launchInstagramAuth(_ sender: Any) {
-        newInstagram();
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        view = webView
+        print ("Defined web view");
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     /** Create a new instagram authorization request */
+    /** call to init auth request */
     func newInstagram() {
         let authURL = String(format: "%@?client_id=%@&redirect_uri=%@&response_type=token&scope=%@&DEBUG=True", arguments: [Accounts.INSTAGRAM_AUTHURL, Accounts.INSTAGRAM_CLIENT_ID, Accounts.INSTAGRAM_REDIRECT_URI, Accounts.INSTAGRAM_SCOPE]);
         
         let urlRequest = URLRequest.init(url: URL.init(string: authURL)!);
-        wView.loadRequest(urlRequest);
+        
+        // TODO remove for release
+        print (urlRequest.description);
+        
+        // Define webView
+        let webConfiguration = WKWebViewConfiguration();
+        webView = WKWebView(frame: .zero, configuration: webConfiguration);
+        webView.uiDelegate = self;
+        view = webView;
+        
+        print ("Defined web view");
+        
+        webView.load(urlRequest);
     }
     
     /** Varify if we received a valid callback url (instagram specific) */
@@ -60,10 +70,9 @@ class Accounts : UIWebView {
     func handleAuth(authToken: String) {
         print("Instagram authentication token ==", authToken)
     }
+    /** End instagram request */
     
     
-    func webView(_ webView: WKWebView, shouldStartLoadWith request:URLRequest, navigationType: UIWebView.NavigationType) -> Bool{
-        return checkRequestForCallbackURL(request: request)
-    }
+    
 }
 /** End of Accounts Class */

@@ -17,9 +17,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        timeLabel.text = "0:00";
+        if ((timeLabel) != nil) {
+            timeLabel.text = "0:00";
+        }
     }
-
+    
+    /** Init authorization */
+    @IBAction func authorize_(_ sender: Any) {
+        print ("auth init");
+        Accounts().newInstagram();
+    }
+    
     /** Response to authorize instagram button.
         * Follows instagram client-side (implicit) authorization
         * rules.

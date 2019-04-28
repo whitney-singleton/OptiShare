@@ -43,7 +43,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="r7n-4b-tCD"/>
                                     <barButtonItem title="Accounts" id="ZCe-92-wDF">
                                         <connections>
-                                            <segue destination="qBI-jl-du7" kind="show" id="pof-tE-aBQ"/>
+                                            <segue destination="qBI-jl-du7" kind="show" id="WmZ-sP-e2E"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="W8h-Qn-K1K"/>
@@ -245,8 +245,8 @@
         <!--View Controller-->
         <scene sceneID="Xh8-hE-FvF">
             <objects>
-                <viewController id="qBI-jl-du7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EAS-kK-aB6" customClass="Accounts" customModule="OptiShare" customModuleProvider="target">
+                <viewController id="qBI-jl-du7" customClass="ViewController" customModule="OptiShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EAS-kK-aB6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -258,14 +258,6 @@
                                     <segment title="LinkedIn"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJZ-eP-wQF">
-                                <rect key="frame" x="154" y="184" width="66" height="30"/>
-                                <state key="normal" title="Authorize"/>
-                                <connections>
-                                    <action selector="launchInstagramAuth:" destination="x8M-tP-yor" eventType="touchUpInside" id="gC8-L9-bTG"/>
-                                    <segue destination="8q4-xW-qIq" kind="show" id="zOE-yh-SDR"/>
-                                </connections>
-                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXN-x9-BVE">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
@@ -289,56 +281,62 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF4-Oc-G0B">
+                                <rect key="frame" x="164" y="173" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="authorize_:" destination="qBI-jl-du7" eventType="touchUpInside" id="I6p-I2-2BR"/>
+                                    <segue destination="4JL-X3-nhG" kind="show" id="krb-2j-6eD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eJZ-eP-wQF" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="154" id="68U-df-VHj"/>
-                            <constraint firstItem="odK-ZH-nkv" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="58" id="72w-q2-Ahl"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="top" secondItem="Afp-Hc-QQJ" secondAttribute="top" id="B8v-D5-Jrs"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="trailing" secondItem="tXN-x9-BVE" secondAttribute="trailing" id="FWm-FE-1rH"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="leading" secondItem="tXN-x9-BVE" secondAttribute="leading" id="M25-Xg-LcN"/>
-                            <constraint firstItem="odK-ZH-nkv" firstAttribute="top" secondItem="u6W-i7-q1s" secondAttribute="bottom" constant="22" id="Plk-nO-AVi"/>
-                            <constraint firstAttribute="trailing" secondItem="u6W-i7-q1s" secondAttribute="trailing" id="Wud-vg-vWL"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="centerX" secondItem="odK-ZH-nkv" secondAttribute="centerX" id="iYF-Vx-QjB"/>
-                            <constraint firstItem="tXN-x9-BVE" firstAttribute="bottom" secondItem="Afp-Hc-QQJ" secondAttribute="bottom" id="kp5-jZ-RDs"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="leading" secondItem="EAS-kK-aB6" secondAttribute="leading" id="zfC-Rs-4BL"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="leading" secondItem="EAS-kK-aB6" secondAttribute="leading" id="Awl-cl-w6w"/>
+                            <constraint firstItem="odK-ZH-nkv" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="58" id="FLe-1z-7Rc"/>
+                            <constraint firstItem="odK-ZH-nkv" firstAttribute="top" secondItem="u6W-i7-q1s" secondAttribute="bottom" constant="22" id="Owe-Tf-bWS"/>
+                            <constraint firstAttribute="trailing" secondItem="u6W-i7-q1s" secondAttribute="trailing" id="PYY-q1-TKo"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="centerX" secondItem="odK-ZH-nkv" secondAttribute="centerX" id="d7r-c4-puu"/>
+                            <constraint firstItem="tXN-x9-BVE" firstAttribute="bottom" secondItem="Afp-Hc-QQJ" secondAttribute="bottom" id="dpW-xK-Fgf"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="top" secondItem="Afp-Hc-QQJ" secondAttribute="top" id="hDG-62-oIk"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="trailing" secondItem="tXN-x9-BVE" secondAttribute="trailing" id="lEk-tU-PVm"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="leading" secondItem="tXN-x9-BVE" secondAttribute="leading" id="mLG-E4-eeO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Afp-Hc-QQJ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6i-Ra-TP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="x8M-tP-yor" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="853.60000000000002" y="130.88455772113943"/>
         </scene>
         <!--Accounts-->
-        <scene sceneID="BNF-hX-xf0">
+        <scene sceneID="vd3-wW-qek">
             <objects>
-                <viewController id="8q4-xW-qIq" customClass="Accounts" customModule="OptiShare" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lkw-50-g4t">
+                <viewController id="4JL-X3-nhG" customClass="Accounts" customModule="OptiShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pmB-WA-gh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pn-RH-Axp" customClass="Accounts" customModule="OptiShare" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnh-ZK-aNO">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Back" id="qgG-iH-YYD"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gyR-Uc-DKj"/>
+                        <constraints>
+                            <constraint firstItem="mnh-ZK-aNO" firstAttribute="leading" secondItem="pmB-WA-gh3" secondAttribute="leading" id="WFC-YQ-sri"/>
+                            <constraint firstAttribute="trailing" secondItem="mnh-ZK-aNO" secondAttribute="trailing" id="onR-Nn-1qf"/>
+                            <constraint firstItem="mnh-ZK-aNO" firstAttribute="bottom" secondItem="Fpy-tW-pa8" secondAttribute="bottom" id="rzd-Oo-J4Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fpy-tW-pa8"/>
                     </view>
-                    <connections>
-                        <outlet property="wView" destination="8Pn-RH-Axp" id="dWA-xm-KDM"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NBJ-bx-Fgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EN2-R5-fZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="131.78410794602701"/>
+            <point key="canvasLocation" x="1614" y="137"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
