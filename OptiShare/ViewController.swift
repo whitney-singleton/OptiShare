@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     /** Begin class variables */
     @IBOutlet weak var timeLabel: UILabel!
     
-
+    // Which account should be loaded
+    @IBOutlet weak var acctLoadSelect: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,6 +37,11 @@ class ViewController: UIViewController {
     @IBAction func authInstagram(_ sender: Any) {
         // TODO authorize instagram externally.
         print ("auth instagram");
+    }
+    
+    /** Get selected account to load*/
+    func getAcctLoad() -> Int {
+        return acctLoadSelect?.selectedSegmentIndex ?? 0;
     }
     
 }
