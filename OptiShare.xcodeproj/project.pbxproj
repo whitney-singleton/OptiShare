@@ -16,26 +16,6 @@
 		7A4152DA22680A2B002A746D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4152D822680A2B002A746D /* LaunchScreen.storyboard */; };
 		7A4152E522680A2B002A746D /* OptiShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4152E422680A2B002A746D /* OptiShareTests.swift */; };
 		7A4152F022680A2B002A746D /* OptiShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4152EF22680A2B002A746D /* OptiShareUITests.swift */; };
-		7A9AFB192288B96E0073B666 /* EventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFAFC2288B96E0073B666 /* EventViewController.xib */; };
-		7A9AFB1A2288B96E0073B666 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFAFE2288B96E0073B666 /* ViewPagerController.m */; };
-		7A9AFB1B2288B96E0073B666 /* ghost_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFB032288B96E0073B666 /* ghost_person.png */; };
-		7A9AFB1C2288B96E0073B666 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFB042288B96E0073B666 /* LoginView.xib */; };
-		7A9AFB1D2288B96E0073B666 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFB062288B96E0073B666 /* ProfileViewController.xib */; };
-		7A9AFB1E2288B96E0073B666 /* conference.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFB092288B96E0073B666 /* conference.jpg */; };
-		7A9AFB1F2288B96E0073B666 /* EventsDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFB0A2288B96E0073B666 /* EventsDataCenter.m */; };
-		7A9AFB202288B96E0073B666 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFB0B2288B96E0073B666 /* EventViewController.m */; };
-		7A9AFB212288B96E0073B666 /* AttendeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFB0C2288B96E0073B666 /* AttendeeCell.m */; };
-		7A9AFB222288B96E0073B666 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFB0E2288B96E0073B666 /* Person.m */; };
-		7A9AFB232288B96E0073B666 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFB0F2288B96E0073B666 /* main.m */; };
-		7A9AFB242288B96E0073B666 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFB102288B96E0073B666 /* logo.png */; };
-		7A9AFB252288B96E0073B666 /* AttendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFB112288B96E0073B666 /* AttendView.xib */; };
-		7A9AFB262288B96E0073B666 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFB122288B96E0073B666 /* Event.m */; };
-		7A9AFB272288B96E0073B666 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFB132288B96E0073B666 /* Images.xcassets */; };
-		7A9AFB282288B96E0073B666 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFB142288B96E0073B666 /* AppDelegate.m */; };
-		7A9AFB292288B96E0073B666 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFB152288B96E0073B666 /* ProfileViewController.m */; };
-		7A9AFB2A2288B96E0073B666 /* linkedin_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFB162288B96E0073B666 /* linkedin_login.png */; };
-		7A9AFB2B2288B96E0073B666 /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9AFB172288B96E0073B666 /* HostViewController.m */; };
-		7A9AFB2C2288B96E0073B666 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A9AFB182288B96E0073B666 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,35 +51,6 @@
 		7A4152EB22680A2B002A746D /* OptiShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OptiShareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4152EF22680A2B002A746D /* OptiShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptiShareUITests.swift; sourceTree = "<group>"; };
 		7A4152F122680A2B002A746D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A9AFAFC2288B96E0073B666 /* EventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventViewController.xib; sourceTree = "<group>"; };
-		7A9AFAFD2288B96E0073B666 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		7A9AFAFE2288B96E0073B666 /* ViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPagerController.m; sourceTree = "<group>"; };
-		7A9AFAFF2288B96E0073B666 /* AttendeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeCell.h; sourceTree = "<group>"; };
-		7A9AFB002288B96E0073B666 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
-		7A9AFB012288B96E0073B666 /* EventsDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsDataCenter.h; sourceTree = "<group>"; };
-		7A9AFB022288B96E0073B666 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7A9AFB032288B96E0073B666 /* ghost_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ghost_person.png; sourceTree = "<group>"; };
-		7A9AFB042288B96E0073B666 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
-		7A9AFB052288B96E0073B666 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		7A9AFB062288B96E0073B666 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		7A9AFB072288B96E0073B666 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		7A9AFB082288B96E0073B666 /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
-		7A9AFB092288B96E0073B666 /* conference.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = conference.jpg; sourceTree = "<group>"; };
-		7A9AFB0A2288B96E0073B666 /* EventsDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsDataCenter.m; sourceTree = "<group>"; };
-		7A9AFB0B2288B96E0073B666 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
-		7A9AFB0C2288B96E0073B666 /* AttendeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeCell.m; sourceTree = "<group>"; };
-		7A9AFB0D2288B96E0073B666 /* ViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPagerController.h; sourceTree = "<group>"; };
-		7A9AFB0E2288B96E0073B666 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		7A9AFB0F2288B96E0073B666 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7A9AFB102288B96E0073B666 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		7A9AFB112288B96E0073B666 /* AttendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendView.xib; sourceTree = "<group>"; };
-		7A9AFB122288B96E0073B666 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		7A9AFB132288B96E0073B666 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7A9AFB142288B96E0073B666 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7A9AFB152288B96E0073B666 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		7A9AFB162288B96E0073B666 /* linkedin_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin_login.png; sourceTree = "<group>"; };
-		7A9AFB172288B96E0073B666 /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
-		7A9AFB182288B96E0073B666 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +85,6 @@
 				7A4152E322680A2B002A746D /* OptiShareTests */,
 				7A4152EE22680A2B002A746D /* OptiShareUITests */,
 				7A4152CD22680A26002A746D /* Products */,
-				7A9AFAFA2288B9430073B666 /* LinkedIn_SDK */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,50 +130,6 @@
 			);
 			path = OptiShareUITests;
 			sourceTree = "<group>";
-		};
-		7A9AFAFA2288B9430073B666 /* LinkedIn_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				7A9AFAFB2288B96E0073B666 /* eventsapp */,
-			);
-			path = LinkedIn_SDK;
-			sourceTree = "<group>";
-		};
-		7A9AFAFB2288B96E0073B666 /* eventsapp */ = {
-			isa = PBXGroup;
-			children = (
-				7A9AFAFC2288B96E0073B666 /* EventViewController.xib */,
-				7A9AFAFD2288B96E0073B666 /* Person.h */,
-				7A9AFAFE2288B96E0073B666 /* ViewPagerController.m */,
-				7A9AFAFF2288B96E0073B666 /* AttendeeCell.h */,
-				7A9AFB002288B96E0073B666 /* EventViewController.h */,
-				7A9AFB012288B96E0073B666 /* EventsDataCenter.h */,
-				7A9AFB022288B96E0073B666 /* AppDelegate.h */,
-				7A9AFB032288B96E0073B666 /* ghost_person.png */,
-				7A9AFB042288B96E0073B666 /* LoginView.xib */,
-				7A9AFB052288B96E0073B666 /* Event.h */,
-				7A9AFB062288B96E0073B666 /* ProfileViewController.xib */,
-				7A9AFB072288B96E0073B666 /* ProfileViewController.h */,
-				7A9AFB082288B96E0073B666 /* HostViewController.h */,
-				7A9AFB092288B96E0073B666 /* conference.jpg */,
-				7A9AFB0A2288B96E0073B666 /* EventsDataCenter.m */,
-				7A9AFB0B2288B96E0073B666 /* EventViewController.m */,
-				7A9AFB0C2288B96E0073B666 /* AttendeeCell.m */,
-				7A9AFB0D2288B96E0073B666 /* ViewPagerController.h */,
-				7A9AFB0E2288B96E0073B666 /* Person.m */,
-				7A9AFB0F2288B96E0073B666 /* main.m */,
-				7A9AFB102288B96E0073B666 /* logo.png */,
-				7A9AFB112288B96E0073B666 /* AttendView.xib */,
-				7A9AFB122288B96E0073B666 /* Event.m */,
-				7A9AFB132288B96E0073B666 /* Images.xcassets */,
-				7A9AFB142288B96E0073B666 /* AppDelegate.m */,
-				7A9AFB152288B96E0073B666 /* ProfileViewController.m */,
-				7A9AFB162288B96E0073B666 /* linkedin_login.png */,
-				7A9AFB172288B96E0073B666 /* HostViewController.m */,
-				7A9AFB182288B96E0073B666 /* Info.plist */,
-			);
-			path = eventsapp;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -329,19 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A9AFB1D2288B96E0073B666 /* ProfileViewController.xib in Resources */,
 				7A4152DA22680A2B002A746D /* LaunchScreen.storyboard in Resources */,
-				7A9AFB242288B96E0073B666 /* logo.png in Resources */,
-				7A9AFB2A2288B96E0073B666 /* linkedin_login.png in Resources */,
-				7A9AFB192288B96E0073B666 /* EventViewController.xib in Resources */,
-				7A9AFB272288B96E0073B666 /* Images.xcassets in Resources */,
-				7A9AFB1C2288B96E0073B666 /* LoginView.xib in Resources */,
 				7A4152D722680A2B002A746D /* Assets.xcassets in Resources */,
-				7A9AFB252288B96E0073B666 /* AttendView.xib in Resources */,
-				7A9AFB1E2288B96E0073B666 /* conference.jpg in Resources */,
 				7A4152D522680A26002A746D /* Main.storyboard in Resources */,
-				7A9AFB1B2288B96E0073B666 /* ghost_person.png in Resources */,
-				7A9AFB2C2288B96E0073B666 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,20 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A9AFB2B2288B96E0073B666 /* HostViewController.m in Sources */,
-				7A9AFB262288B96E0073B666 /* Event.m in Sources */,
-				7A9AFB232288B96E0073B666 /* main.m in Sources */,
 				7A2284F22270F6B3008DE6F8 /* Settings.swift in Sources */,
 				7A2284F42270F836008DE6F8 /* Accounts.swift in Sources */,
-				7A9AFB1A2288B96E0073B666 /* ViewPagerController.m in Sources */,
-				7A9AFB212288B96E0073B666 /* AttendeeCell.m in Sources */,
-				7A9AFB202288B96E0073B666 /* EventViewController.m in Sources */,
 				7A4152D222680A26002A746D /* ViewController.swift in Sources */,
-				7A9AFB282288B96E0073B666 /* AppDelegate.m in Sources */,
-				7A9AFB292288B96E0073B666 /* ProfileViewController.m in Sources */,
-				7A9AFB222288B96E0073B666 /* Person.m in Sources */,
 				7A4152D022680A26002A746D /* AppDelegate.swift in Sources */,
-				7A9AFB1F2288B96E0073B666 /* EventsDataCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

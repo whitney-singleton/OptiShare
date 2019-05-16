@@ -21,16 +21,13 @@ class Accounts : UIViewController, WKUIDelegate {
     static let INSTAGRAM_SCOPE = "follower_list+public_content";
     /** end instagram API strings */
     
-    // Web view
-    var webView: WKWebView!
+    // Main web view for log in to accounts */
+    @IBOutlet weak var loginView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        view = webView
+        newInstagram()
         print ("Defined web view");
     }
 
@@ -44,15 +41,12 @@ class Accounts : UIViewController, WKUIDelegate {
         // TODO remove for release
         print (urlRequest.description);
         
-        // Define webView
         let webConfiguration = WKWebViewConfiguration();
-        webView = WKWebView(frame: .zero, configuration: webConfiguration);
-        webView.uiDelegate = self;
-        view = webView;
-        
-        print ("Defined web view");
-        
-        webView.load(urlRequest);
+        loginView = WKWebView(frame: .zero, configuration: webConfiguration);
+        loginView.uiDelegate = self;
+        view = loginView;
+        loginView.load(urlRequest);
+        print (loginView.isLoading);
     }
     
     /** Varify if we received a valid callback url (instagram specific) */
@@ -60,6 +54,7 @@ class Accounts : UIViewController, WKUIDelegate {
         let requestURLString = (request.url?.absoluteString)! as String
         if requestURLString.hasPrefix(Accounts.INSTAGRAM_REDIRECT_URI) {
             let range: Range<String.Index> = requestURLString.range(of: "#access_token=")!
+            // TODO depreciated reff
             handleAuth(authToken: requestURLString.substring(from: range.upperBound));
             return false;
         }
