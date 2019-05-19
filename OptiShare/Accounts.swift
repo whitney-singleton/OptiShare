@@ -16,7 +16,7 @@ class Accounts : UIViewController, WKUIDelegate {
     static let INSTAGRAM_AUTHURL = "https://api.instagram.com/oauth/authorize/";
     static let INSTAGRAM_CLIENT_ID = "faf836a5070a485e90aa88bed7fe5a54";
     static let INSTAGRAM_CLIENTSERCRET = "YOUR_CLIENT_SECRET";
-    static let INSTAGRAM_REDIRECT_URI = "optishareapp.com/Instagram";
+    static let INSTAGRAM_REDIRECT_URI = "optishareapp.com/instagram";
     static let INSTAGRAM_ACCESS_TOKEN = "access_token";
     static let INSTAGRAM_SCOPE = "follower_list+public_content";
     /** end instagram API strings */
@@ -55,6 +55,7 @@ class Accounts : UIViewController, WKUIDelegate {
         if requestURLString.hasPrefix(Accounts.INSTAGRAM_REDIRECT_URI) {
             let range: Range<String.Index> = requestURLString.range(of: "#access_token=")!
             // TODO depreciated reff
+            print("handling auth (ig)")
             handleAuth(authToken: requestURLString.substring(from: range.upperBound));
             return false;
         }
