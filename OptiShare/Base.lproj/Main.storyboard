@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OptiShare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" userLabel="ViewController" customClass="ViewController" customModule="OptiShare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,37 +322,37 @@
                                     <navigationItem title="Accounts" id="JGj-Xd-Mmk"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF4-Oc-G0B">
-                                <rect key="frame" x="154" y="173" width="66" height="30"/>
-                                <state key="normal" title="Authorize"/>
-                                <connections>
-                                    <action selector="authorize_:" destination="qBI-jl-du7" eventType="touchUpInside" id="I6p-I2-2BR"/>
-                                    <segue destination="4JL-X3-nhG" kind="show" id="krb-2j-6eD"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OptiShare never sees your login information " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifF-cO-BhM">
                                 <rect key="frame" x="18" y="602" width="339" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZH-ah-xoF">
+                                <rect key="frame" x="154" y="178" width="66" height="30"/>
+                                <state key="normal" title="Authorize"/>
+                                <connections>
+                                    <action selector="authorize:" destination="qBI-jl-du7" eventType="touchUpInside" id="Eea-Dt-KpQ"/>
+                                    <segue destination="4JL-X3-nhG" kind="show" id="qSZ-fq-QNj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="u6W-i7-q1s" secondAttribute="trailing" id="77L-vh-enM"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="centerX" secondItem="odK-ZH-nkv" secondAttribute="centerX" id="CTr-Hk-HZ2"/>
-                            <constraint firstItem="odK-ZH-nkv" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="58" id="Dm7-VH-04Y"/>
-                            <constraint firstItem="odK-ZH-nkv" firstAttribute="top" secondItem="u6W-i7-q1s" secondAttribute="bottom" constant="22" id="EU7-0A-wYL"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="leading" secondItem="tXN-x9-BVE" secondAttribute="leading" id="Pv5-3r-dkP"/>
-                            <constraint firstItem="ifF-cO-BhM" firstAttribute="centerX" secondItem="tXN-x9-BVE" secondAttribute="centerX" id="RBr-69-0lc"/>
-                            <constraint firstItem="PF4-Oc-G0B" firstAttribute="top" secondItem="odK-ZH-nkv" secondAttribute="bottom" constant="59" id="ULj-nj-T27"/>
-                            <constraint firstItem="PF4-Oc-G0B" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="154" id="fPP-CD-5P7"/>
-                            <constraint firstItem="tXN-x9-BVE" firstAttribute="top" secondItem="ifF-cO-BhM" secondAttribute="bottom" id="mV6-6K-eFK"/>
-                            <constraint firstItem="tXN-x9-BVE" firstAttribute="bottom" secondItem="Afp-Hc-QQJ" secondAttribute="bottom" id="o1t-hq-kOY"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="leading" secondItem="EAS-kK-aB6" secondAttribute="leading" id="qvh-VZ-DDs"/>
-                            <constraint firstItem="odK-ZH-nkv" firstAttribute="centerX" secondItem="PF4-Oc-G0B" secondAttribute="centerX" id="sxe-H7-NkI"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="top" secondItem="Afp-Hc-QQJ" secondAttribute="top" id="xPI-qA-YTt"/>
-                            <constraint firstItem="u6W-i7-q1s" firstAttribute="trailing" secondItem="tXN-x9-BVE" secondAttribute="trailing" id="z00-o3-s30"/>
+                            <constraint firstItem="odK-ZH-nkv" firstAttribute="centerX" secondItem="RZH-ah-xoF" secondAttribute="centerX" id="18o-Cl-1Dz"/>
+                            <constraint firstItem="RZH-ah-xoF" firstAttribute="top" secondItem="odK-ZH-nkv" secondAttribute="bottom" constant="64" id="4H5-s3-VmZ"/>
+                            <constraint firstItem="odK-ZH-nkv" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="58" id="Ixb-5Q-QHg"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="top" secondItem="Afp-Hc-QQJ" secondAttribute="top" id="LTS-NF-zsO"/>
+                            <constraint firstItem="odK-ZH-nkv" firstAttribute="top" secondItem="u6W-i7-q1s" secondAttribute="bottom" constant="22" id="REt-Xv-FeA"/>
+                            <constraint firstItem="ifF-cO-BhM" firstAttribute="centerX" secondItem="tXN-x9-BVE" secondAttribute="centerX" id="Wob-hy-vzH"/>
+                            <constraint firstItem="RZH-ah-xoF" firstAttribute="leading" secondItem="Afp-Hc-QQJ" secondAttribute="leading" constant="154" id="bSu-RH-t6A"/>
+                            <constraint firstAttribute="trailing" secondItem="u6W-i7-q1s" secondAttribute="trailing" id="cq6-hD-wlS"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="trailing" secondItem="tXN-x9-BVE" secondAttribute="trailing" id="crf-DO-4UT"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="centerX" secondItem="odK-ZH-nkv" secondAttribute="centerX" id="lX3-SK-PkU"/>
+                            <constraint firstItem="tXN-x9-BVE" firstAttribute="top" secondItem="ifF-cO-BhM" secondAttribute="bottom" id="n3t-8o-SHj"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="leading" secondItem="tXN-x9-BVE" secondAttribute="leading" id="nF0-R9-E89"/>
+                            <constraint firstItem="u6W-i7-q1s" firstAttribute="leading" secondItem="EAS-kK-aB6" secondAttribute="leading" id="ndw-Xb-ceN"/>
+                            <constraint firstItem="tXN-x9-BVE" firstAttribute="bottom" secondItem="Afp-Hc-QQJ" secondAttribute="bottom" id="wbx-OW-1i3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Afp-Hc-QQJ"/>
                     </view>
@@ -411,6 +411,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="WmZ-sP-e2E"/>
-        <segue reference="mRO-uX-fkf"/>
+        <segue reference="2sY-rr-He6"/>
     </inferredMetricsTieBreakers>
 </document>

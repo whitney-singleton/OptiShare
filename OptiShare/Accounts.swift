@@ -11,6 +11,15 @@ import UIKit
 import WebKit
 import SwiftInstagram
 
+/** A struct for carrying easily lost variables and calculations */
+public struct igPosts {
+    internal static var postHistory: [Post] = []
+    
+    static func add(_ pst: Post) {
+        postHistory.append(pst)
+    }
+}
+
 struct Inst {
     /** Instagram API const string variables */
     static let INSTAGRAM_AUTHURL = "https://api.instagram.com/oauth/authorize/";
@@ -24,10 +33,14 @@ struct Inst {
 
 class Accounts : UINavigationController {
     
-    // Main web view for log in to accounts */
+    // Main web view for log in to accounts
     @IBOutlet weak var loginView: WKWebView!
     
+    // Whether there is currently an attempt to load an API
     var isLoading = false
+    
+    // All posts by instagram stored as an array of Post objects
+    var aInstaPosts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +58,18 @@ class Accounts : UINavigationController {
         isLoading = !isLoading
         
         print("attempting api auth") //TODO del for release
-        // Login
+        // Login & immediately update getMedia on success
         api.login(from: self, success: {
             print ("login successful: ")
             print(api.isAuthenticated)
             self.getMediaInst()
-
+            
+            // Exit web view
+            self.dismiss(animated: true) {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            
+            
         }, failure: { error in
             print(error.localizedDescription)
         })
@@ -66,11 +85,13 @@ class Accounts : UINavigationController {
         
         api.recentMedia(fromUser: "self", count: 10, success: { mediaList in
             print("likes: ")
-            print(mediaList[0].createdDate)
-            print(mediaList[0].likes.count)
             
-            print(mediaList[1].createdDate)
-            print(mediaList[1].likes.count)
+            for post in mediaList {
+                print(post.createdDate)
+                print(post.likes.count)
+                self.aInstaPosts.append(Post(likes: post.likes.count, date: post.createdDate))
+                igPosts.add(self.aInstaPosts.last!)
+            }
             
         }, failure: { error in
             print(error.localizedDescription)
@@ -98,3 +119,11 @@ class Accounts : UINavigationController {
 }
 /** End of Accounts Class */
 
+
+/** Extension : Getters and Setters */
+extension Accounts {
+    /** Get all posts made through instagram */
+    public func getInstagramHist() -> [Post] {
+        return self.aInstaPosts
+    }
+}
