@@ -11,14 +11,6 @@ import UIKit
 import WebKit
 import SwiftInstagram
 
-/** A struct for carrying easily lost variables and calculations */
-public struct igPosts {
-    internal static var postHistory: [Post] = []
-    
-    static func add(_ pst: Post) {
-        postHistory.append(pst)
-    }
-}
 
 struct Inst {
     /** Instagram API const string variables */
@@ -64,18 +56,21 @@ class Accounts : UINavigationController {
             print(api.isAuthenticated)
             self.getMediaInst()
             
+            // Save token globally
+            let stdToken = UserDefaults.standard;
+            stdToken.set(api.retrieveAccessToken()!, forKey: "ig_auth_token");
+            stdToken.synchronize();
+            
             // Exit web view
             self.dismiss(animated: true) {
                 self.navigationController?.popToRootViewController(animated: true)
             }
-            
             
         }, failure: { error in
             print(error.localizedDescription)
         })
         
         // Verify authentication
-        getMediaInst()
         print(api.isAuthenticated)
     }
     
@@ -86,33 +81,20 @@ class Accounts : UINavigationController {
         api.recentMedia(fromUser: "self", count: 10, success: { mediaList in
             print("likes: ")
             
+            // Make a Post object for each found post -> add to aInstaPosts
             for post in mediaList {
                 print(post.createdDate)
                 print(post.likes.count)
                 self.aInstaPosts.append(Post(likes: post.likes.count, date: post.createdDate))
-                igPosts.add(self.aInstaPosts.last!)
             }
+            
+            // Run a model on all found posts - Regression will set display value
+            let model = Regression(posts: self.aInstaPosts, type: 1)
+            model.runAlg()
             
         }, failure: { error in
             print(error.localizedDescription)
         })
-    }
-    
-    /** depc. Verify if we received a valid callback url (instagram specific) */
-    func checkRequestForCallbackURL(request: URLRequest) -> Bool {
-        let requestURLString = (request.url?.absoluteString)! as String
-        print(requestURLString)
-        if requestURLString.hasPrefix(Inst.INSTAGRAM_REDIRECT_URI) {
-            loginView.removeFromSuperview()
-            
-            let range: Range<String.Index> = requestURLString.range(of: "#/access_token=")!
-            
-            // Get token (print) TODO rmv
-            print("handling auth (ig)")
-            print(String(requestURLString[..<range.upperBound]));
-            return false;
-        }
-        return true;
     }
     
     

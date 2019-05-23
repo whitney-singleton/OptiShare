@@ -8,6 +8,12 @@
 
 import Foundation
 
+struct currentSettings {
+    static var combined:Bool = false
+    
+    static var useOld:Bool = true
+}
+
 class Settings : ViewController {
     
     
@@ -20,7 +26,7 @@ class Settings : ViewController {
         
         // Save Combined bool
         let stdCombined = UserDefaults.standard;
-        stdCombined.set("someVariableOrString", forKey: "myKey");
+        stdCombined.set(currentSettings.combined, forKey: "settings_combined");
         stdCombined.synchronize();
     }
 }

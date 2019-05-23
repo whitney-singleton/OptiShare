@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     // The main label for ideal time display
     @IBOutlet weak var timeLabel: UILabel!
     
+    // The selected segment for home screen time display
+    @IBOutlet weak var timeDisplaySegment: UISegmentedControl!
+    
     // The currently selected segment
     public var selectedAuthSegment = 1
     
@@ -29,9 +32,10 @@ class ViewController: UIViewController {
     /* Begin class */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         if (timeLabel != nil) {
-            timeLabel.text = getTimeIg()
+            displayTime()
             print("updated time disp.")
         }
     }
@@ -46,25 +50,19 @@ class ViewController: UIViewController {
         acct.newInstagram()
     }
     
-    /** Calculate a time based on instagram post history */
-    func getTimeIg() -> String {
-        let access:Accounts = Accounts()
-        let postHistory:[Post] = access.getInstagramHist()
-        var _ = 0
-        for post in postHistory {
-            return post.dateToTime()
-        }
-        return "0:00"
+    /** Called on time display segment value changed */
+    @IBAction func timeDispSegChanged(_ sender: Any) {
+        displayTime()
     }
     
-    
+    /** Decide which account to show time for */
+    func displayTime() {
+        switch (timeDisplaySegment?.selectedSegmentIndex) {
+        case 0:         timeLabel.text = idealTime.instagramTime
+        case 1:         timeLabel.text = idealTime.facebookTime
+        case 2:         timeLabel.text = idealTime.linkedinTime
+        default: timeLabel.text = "error"
+        }
+    }
 }
 // EoC ViewController
-
-
-/** Data retrieval */
-extension ViewController{
-    func getTokenInsta() -> String {
-        return ("TODO")
-    }
-}

@@ -19,6 +19,7 @@
 		7A6F6B9E229718000010B9B6 /* SwiftInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6F6B89229717E90010B9B6 /* SwiftInstagram.framework */; };
 		7A6F6B9F229718000010B9B6 /* SwiftInstagram.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6F6B89229717E90010B9B6 /* SwiftInstagram.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A6F6BA42297280A0010B9B6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6F6BA32297280A0010B9B6 /* Post.swift */; };
+		7A6F6BA822975ADA0010B9B6 /* Regression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6F6BA722975ADA0010B9B6 /* Regression.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		7A4152F122680A2B002A746D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A6F6B81229717E90010B9B6 /* SwiftInstagram.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftInstagram.xcodeproj; path = instagramAPI/SwiftInstagram.xcodeproj; sourceTree = "<group>"; };
 		7A6F6BA32297280A0010B9B6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		7A6F6BA722975ADA0010B9B6 /* Regression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regression.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +148,9 @@
 				7A4152CF22680A26002A746D /* AppDelegate.swift */,
 				7A4152D122680A26002A746D /* ViewController.swift */,
 				7A2284F32270F836008DE6F8 /* Accounts.swift */,
-				7A2284F12270F6B3008DE6F8 /* Settings.swift */,
 				7A6F6BA32297280A0010B9B6 /* Post.swift */,
+				7A6F6BA722975ADA0010B9B6 /* Regression.swift */,
+				7A2284F12270F6B3008DE6F8 /* Settings.swift */,
 				7A4152D322680A26002A746D /* Main.storyboard */,
 				7A4152D622680A2B002A746D /* Assets.xcassets */,
 				7A4152D822680A2B002A746D /* LaunchScreen.storyboard */,
@@ -341,6 +344,7 @@
 			files = (
 				7A2284F22270F6B3008DE6F8 /* Settings.swift in Sources */,
 				7A2284F42270F836008DE6F8 /* Accounts.swift in Sources */,
+				7A6F6BA822975ADA0010B9B6 /* Regression.swift in Sources */,
 				7A4152D222680A26002A746D /* ViewController.swift in Sources */,
 				7A4152D022680A26002A746D /* AppDelegate.swift in Sources */,
 				7A6F6BA42297280A0010B9B6 /* Post.swift in Sources */,
@@ -525,6 +529,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5XBK5USAN6;
 				INFOPLIST_FILE = OptiShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -543,6 +548,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5XBK5USAN6;
 				INFOPLIST_FILE = OptiShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
