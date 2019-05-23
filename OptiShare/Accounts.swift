@@ -9,66 +9,92 @@
 import Foundation
 import UIKit
 import WebKit
+import SwiftInstagram
 
-class Accounts : UIViewController, WKUIDelegate {
-    
+struct Inst {
     /** Instagram API const string variables */
     static let INSTAGRAM_AUTHURL = "https://api.instagram.com/oauth/authorize/";
     static let INSTAGRAM_CLIENT_ID = "faf836a5070a485e90aa88bed7fe5a54";
-    static let INSTAGRAM_CLIENTSERCRET = "YOUR_CLIENT_SECRET";
-    static let INSTAGRAM_REDIRECT_URI = "optishareapp.com/instagram";
+    static let INSTAGRAM_CLIENTSECRET = "0785f87adac349f58943cb6234ea4145";
+    static let INSTAGRAM_REDIRECT_URI = "https://www.optishareapp.com/instagram";
     static let INSTAGRAM_ACCESS_TOKEN = "access_token";
     static let INSTAGRAM_SCOPE = "follower_list+public_content";
     /** end instagram API strings */
+}
+
+class Accounts : UINavigationController {
     
     // Main web view for log in to accounts */
     @IBOutlet weak var loginView: WKWebView!
     
+    var isLoading = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let webConfiguration = WKWebViewConfiguration()
-        newInstagram()
-        print ("Defined web view");
+        _ = WKWebViewConfiguration()
+        if (!isLoading) {
+            newInstagram()
+        }
+        print ("Defined acct view");
     }
-
+    
     /** Create a new instagram authorization request */
     /** call to init auth request */
     func newInstagram() {
-        let authURL = String(format: "%@?client_id=%@&redirect_uri=%@&response_type=token&scope=%@&DEBUG=True", arguments: [Accounts.INSTAGRAM_AUTHURL, Accounts.INSTAGRAM_CLIENT_ID, Accounts.INSTAGRAM_REDIRECT_URI, Accounts.INSTAGRAM_SCOPE]);
+        let api = Instagram.shared
+        isLoading = !isLoading
         
-        let urlRequest = URLRequest.init(url: URL.init(string: authURL)!);
+        print("attempting api auth") //TODO del for release
+        // Login
+        api.login(from: self, success: {
+            print ("login successful: ")
+            print(api.isAuthenticated)
+            self.getMediaInst()
+
+        }, failure: { error in
+            print(error.localizedDescription)
+        })
         
-        // TODO remove for release
-        print (urlRequest.description);
-        
-        let webConfiguration = WKWebViewConfiguration();
-        loginView = WKWebView(frame: .zero, configuration: webConfiguration);
-        loginView.uiDelegate = self;
-        view = loginView;
-        loginView.load(urlRequest);
-        print (loginView.isLoading);
+        // Verify authentication
+        getMediaInst()
+        print(api.isAuthenticated)
     }
     
-    /** Varify if we received a valid callback url (instagram specific) */
+    /** likes in recent media */
+    func getMediaInst() {
+        let api = Instagram.shared
+        
+        api.recentMedia(fromUser: "self", count: 10, success: { mediaList in
+            print("likes: ")
+            print(mediaList[0].createdDate)
+            print(mediaList[0].likes.count)
+            
+            print(mediaList[1].createdDate)
+            print(mediaList[1].likes.count)
+            
+        }, failure: { error in
+            print(error.localizedDescription)
+        })
+    }
+    
+    /** depc. Verify if we received a valid callback url (instagram specific) */
     func checkRequestForCallbackURL(request: URLRequest) -> Bool {
         let requestURLString = (request.url?.absoluteString)! as String
-        if requestURLString.hasPrefix(Accounts.INSTAGRAM_REDIRECT_URI) {
-            let range: Range<String.Index> = requestURLString.range(of: "#access_token=")!
-            // TODO depreciated reff
+        print(requestURLString)
+        if requestURLString.hasPrefix(Inst.INSTAGRAM_REDIRECT_URI) {
+            loginView.removeFromSuperview()
+            
+            let range: Range<String.Index> = requestURLString.range(of: "#/access_token=")!
+            
+            // Get token (print) TODO rmv
             print("handling auth (ig)")
-            handleAuth(authToken: requestURLString.substring(from: range.upperBound));
+            print(String(requestURLString[..<range.upperBound]));
             return false;
         }
         return true;
     }
     
-    /* Helper for validation auth token TODO remove for release */
-    func handleAuth(authToken: String) {
-        print("Instagram authentication token ==", authToken)
-    }
-    /** End instagram request */
-    
-    
     
 }
 /** End of Accounts Class */
+

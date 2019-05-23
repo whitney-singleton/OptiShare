@@ -1,0 +1,3 @@
+[submodule "instagramAPI"]
+	path = instagramAPI
+	url = https://github.com/AnderGoig/SwiftInstagram.git

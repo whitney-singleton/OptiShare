@@ -45,4 +45,12 @@ class ViewController: UIViewController {
     }
     
 }
+// EoC ViewController
 
+
+/** Data retrieval */
+extension ViewController {
+    func getTokenInsta() -> String {
+        return ("TODO")
+    }
+}

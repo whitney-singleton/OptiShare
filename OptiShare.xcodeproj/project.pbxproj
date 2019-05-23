@@ -16,6 +16,8 @@
 		7A4152DA22680A2B002A746D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4152D822680A2B002A746D /* LaunchScreen.storyboard */; };
 		7A4152E522680A2B002A746D /* OptiShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4152E422680A2B002A746D /* OptiShareTests.swift */; };
 		7A4152F022680A2B002A746D /* OptiShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4152EF22680A2B002A746D /* OptiShareUITests.swift */; };
+		7A6F6B9E229718000010B9B6 /* SwiftInstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6F6B89229717E90010B9B6 /* SwiftInstagram.framework */; };
+		7A6F6B9F229718000010B9B6 /* SwiftInstagram.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6F6B89229717E90010B9B6 /* SwiftInstagram.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +35,42 @@
 			remoteGlobalIDString = 7A4152CB22680A25002A746D;
 			remoteInfo = OptiShare;
 		};
+		7A6F6B88229717E90010B9B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A6F6B81229717E90010B9B6 /* SwiftInstagram.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3549BB211DA389CD00C63030;
+			remoteInfo = "SwiftInstagram-iOS";
+		};
+		7A6F6B8A229717E90010B9B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A6F6B81229717E90010B9B6 /* SwiftInstagram.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3549BB611DA38ADB00C63030;
+			remoteInfo = "SwiftInstagramTests-iOS";
+		};
+		7A6F6BA0229718000010B9B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A6F6B81229717E90010B9B6 /* SwiftInstagram.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3549BB201DA389CD00C63030;
+			remoteInfo = "SwiftInstagram-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7A6F6BA2229718000010B9B6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7A6F6B9F229718000010B9B6 /* SwiftInstagram.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7A2284F12270F6B3008DE6F8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -51,6 +88,7 @@
 		7A4152EB22680A2B002A746D /* OptiShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OptiShareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4152EF22680A2B002A746D /* OptiShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptiShareUITests.swift; sourceTree = "<group>"; };
 		7A4152F122680A2B002A746D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A6F6B81229717E90010B9B6 /* SwiftInstagram.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftInstagram.xcodeproj; path = instagramAPI/SwiftInstagram.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A6F6B9E229718000010B9B6 /* SwiftInstagram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +120,7 @@
 		7A4152C322680A25002A746D = {
 			isa = PBXGroup;
 			children = (
+				7A6F6B81229717E90010B9B6 /* SwiftInstagram.xcodeproj */,
 				7A4152CE22680A26002A746D /* OptiShare */,
 				7A4152E322680A2B002A746D /* OptiShareTests */,
 				7A4152EE22680A2B002A746D /* OptiShareUITests */,
@@ -131,6 +171,15 @@
 			path = OptiShareUITests;
 			sourceTree = "<group>";
 		};
+		7A6F6B82229717E90010B9B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A6F6B89229717E90010B9B6 /* SwiftInstagram.framework */,
+				7A6F6B8B229717E90010B9B6 /* SwiftInstagramTests-iOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,10 +190,12 @@
 				7A4152C822680A25002A746D /* Sources */,
 				7A4152C922680A25002A746D /* Frameworks */,
 				7A4152CA22680A25002A746D /* Resources */,
+				7A6F6BA2229718000010B9B6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7A6F6BA1229718000010B9B6 /* PBXTargetDependency */,
 			);
 			name = OptiShare;
 			productName = OptiShare;
@@ -221,6 +272,12 @@
 			mainGroup = 7A4152C322680A25002A746D;
 			productRefGroup = 7A4152CD22680A26002A746D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7A6F6B82229717E90010B9B6 /* Products */;
+					ProjectRef = 7A6F6B81229717E90010B9B6 /* SwiftInstagram.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7A4152CB22680A25002A746D /* OptiShare */,
@@ -229,6 +286,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7A6F6B89229717E90010B9B6 /* SwiftInstagram.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftInstagram.framework;
+			remoteRef = 7A6F6B88229717E90010B9B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A6F6B8B229717E90010B9B6 /* SwiftInstagramTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftInstagramTests-iOS.xctest";
+			remoteRef = 7A6F6B8A229717E90010B9B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7A4152CA22680A25002A746D /* Resources */ = {
@@ -297,6 +371,11 @@
 			isa = PBXTargetDependency;
 			target = 7A4152CB22680A25002A746D /* OptiShare */;
 			targetProxy = 7A4152EC22680A2B002A746D /* PBXContainerItemProxy */;
+		};
+		7A6F6BA1229718000010B9B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftInstagram-iOS";
+			targetProxy = 7A6F6BA0229718000010B9B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -439,6 +518,7 @@
 		7A4152F522680A2B002A746D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OptiShare/Info.plist;
@@ -456,6 +536,7 @@
 		7A4152F622680A2B002A746D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OptiShare/Info.plist;
