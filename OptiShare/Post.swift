@@ -36,7 +36,7 @@ class Post {
         self.date = date
     }
     
-    /** Convert an (insta confirmed only) account to string from Date object */
+    /** Convert an (insta confirmed only valid for std lib Date objects) account to string from Date object */
     func dateToTime() -> String {
         let dateStr = self.date.description
         var time = dateStr.dropFirst(11)

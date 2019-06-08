@@ -12,6 +12,8 @@ struct currentSettings {
     static var combined:Bool = false
     
     static var useOld:Bool = true
+    
+    static var smoothing:Int = 1
 }
 
 class Settings : ViewController {

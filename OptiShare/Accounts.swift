@@ -9,19 +9,10 @@
 import Foundation
 import UIKit
 import WebKit
+
 import SwiftInstagram
-
-
-struct Inst {
-    /** Instagram API const string variables */
-    static let INSTAGRAM_AUTHURL = "https://api.instagram.com/oauth/authorize/";
-    static let INSTAGRAM_CLIENT_ID = "faf836a5070a485e90aa88bed7fe5a54";
-    static let INSTAGRAM_CLIENTSECRET = "0785f87adac349f58943cb6234ea4145";
-    static let INSTAGRAM_REDIRECT_URI = "https://www.optishareapp.com/instagram";
-    static let INSTAGRAM_ACCESS_TOKEN = "access_token";
-    static let INSTAGRAM_SCOPE = "follower_list+public_content";
-    /** end instagram API strings */
-}
+import FacebookLogin
+import FacebookCore
 
 class Accounts : UINavigationController {
     
@@ -37,9 +28,12 @@ class Accounts : UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         _ = WKWebViewConfiguration()
-        if (!isLoading) {
+        if (!isLoading && ViewInfo.acctLoginSelect == 0) {
             newInstagram()
+        } else if (!isLoading && ViewInfo.acctLoginSelect == 1) {
+            newFacebook()
         }
+        
         print ("Defined acct view");
     }
     
@@ -74,7 +68,7 @@ class Accounts : UINavigationController {
         print(api.isAuthenticated)
     }
     
-    /** likes in recent media */
+    /** Get recent media once login is confirmed only - makes all calles to Regression to init a time */
     func getMediaInst() {
         let api = Instagram.shared
         
@@ -95,6 +89,15 @@ class Accounts : UINavigationController {
         }, failure: { error in
             print(error.localizedDescription)
         })
+    }
+    
+    func newFacebook() {
+        // Init login button display
+        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+        
+        
     }
     
     

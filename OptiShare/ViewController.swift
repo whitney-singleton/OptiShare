@@ -7,7 +7,14 @@
 //
 
 import UIKit
+import FacebookLogin
+import FacebookCore
 
+/** GLobal info on current view */
+struct ViewInfo {
+    // State of account login
+    static var acctLoginSelect = 0
+}
 
 class ViewController: UIViewController {
     
@@ -28,7 +35,6 @@ class ViewController: UIViewController {
     // The Accounts object for handling login
     var acct = Accounts()
     
-    
     /* Begin class */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +54,12 @@ class ViewController: UIViewController {
     /** On Authorize button click launch authorization on acct object */
     @IBAction func authorize(_ sender: Any) {
         acct.newInstagram()
+    }
+    
+    /** Login auth selector did change */
+    @IBAction func acctLoginSegChanged(_ sender: Any) {
+        // Change ViewInfo based on segment changes
+        ViewInfo.acctLoginSelect = (acctLoadSelect?.selectedSegmentIndex)!
     }
     
     /** Called on time display segment value changed */
