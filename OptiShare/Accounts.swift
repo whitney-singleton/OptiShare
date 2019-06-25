@@ -97,6 +97,18 @@ class Accounts : UINavigationController {
         loginButton.center = view.center
         view.addSubview(loginButton)
         
+        // Init on close obtain graphs data
+        let connection = GraphRequestConnection()
+        connection.add(GraphRequest(graphPath: "/me")) { httpResponse, result in
+            switch result {
+            case .success(let response):
+                print("Graph Request Succeeded: \(response)")
+            case .failed(let error):
+                print("Graph Request Failed: \(error)")
+            }
+        }
+        connection.start()
+        
         
     }
     
