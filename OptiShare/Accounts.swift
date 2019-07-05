@@ -25,6 +25,9 @@ class Accounts : UINavigationController {
     // All posts by instagram stored as an array of Post objects
     var aInstaPosts = [Post]()
     
+    // All posts by facebook stored as an array of Post objects
+    var aFbPosts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         _ = WKWebViewConfiguration()
@@ -99,16 +102,58 @@ class Accounts : UINavigationController {
         
         // Init on close obtain graphs data
         let connection = GraphRequestConnection()
-        connection.add(GraphRequest(graphPath: "/me")) { httpResponse, result in
+        connection.add(GraphRequest(graphPath: "/me/posts")) { httpResponse, result in
             switch result {
             case .success(let response):
                 print("Graph Request Succeeded: \(response)")
+                let split = response.stringValue!.split(separator: " ")
+                var like = false; var time = false
+                var rLike = ""; var rTime = ""
+                
+                // Parse for key pieces of json
+                for r in split {
+                    if (r == "\"total_count\"") {
+                        like = true
+                    }
+                    if (r == "\"created_time\"") {
+                        time = true
+                    }
+                    if time {
+                        rTime = r + ""
+                        time = !time
+                    }
+                    if like {
+                        rLike = r + ""
+                        like = !like
+                    }
+                    
+                    // Parse date to convert to a time interval since a set point
+                    var index = rTime.index(rTime.endIndex, offsetBy: -11)
+                    let sub = rTime[index...]
+                    let sTime = sub + ""
+                    
+                    index = sTime.index(sTime.startIndex, offsetBy: 3)
+                    let mSubHour = sTime[..<index]
+                    let sHour = mSubHour + ""
+                    
+                    index = sTime.index(sTime.endIndex, offsetBy: -3)
+                    let mSubMin = sTime[index...]
+                    let sMin = mSubMin + ""
+                    let timeElapsed = Int(sHour)! * 360 + Int(sMin)! * 60
+                    
+                    // Append new Post object
+                    self.aFbPosts.append(Post(likes: Int(rLike)!, date: Date(timeIntervalSinceReferenceDate: TimeInterval(timeElapsed)) ))
+                }
+                
+                // Run a model on all found posts - Regression will set display value
+                let model = Regression(posts: self.aFbPosts, type: 1)
+                model.runAlg()
+                
             case .failed(let error):
                 print("Graph Request Failed: \(error)")
             }
         }
         connection.start()
-        
         
     }
     
@@ -122,5 +167,10 @@ extension Accounts {
     /** Get all posts made through instagram */
     public func getInstagramHist() -> [Post] {
         return self.aInstaPosts
+    }
+    
+    /** Get all posts made through facebook */
+    public func getFbHist() -> [Post] {
+        return self.aFbPosts
     }
 }
